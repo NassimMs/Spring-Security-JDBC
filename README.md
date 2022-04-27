@@ -8,6 +8,7 @@ Continuation of the Spring MVC Project but with Spring Security Dependency
   - JDBC Authentifaction using mysql
   - thymeleaf-extras-springsecurity5  
   - Roles System and Access Management
+  - Added User Details Functionnality
 
 ## Docs 
 
@@ -17,3 +18,6 @@ Password Storage :
 
 https://docs.spring.io/spring-security/reference/features/authentication/password-storage.html
 
+# Special Thanks 
+
+To @mohamedYoussfi   https://github.com/mohamedYoussfi  For his awesome instructions ✔✔
