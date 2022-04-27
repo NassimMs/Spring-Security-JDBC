@@ -1,5 +1,6 @@
 package ma.emsi.jpaap.sec;
 
+import ma.emsi.jpaap.sec.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +8,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -17,6 +21,8 @@ import javax.sql.DataSource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     DataSource dataSource;
+    @Autowired
+    UserDetailsServiceImpl userDetailsService;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // Pour specifier la page login
@@ -25,8 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // Les Droits d'acces
         // Check Endpoint for authorization
         http.authorizeRequests().antMatchers("/home").permitAll(); // Authorize Everyone
-        http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
-        http.authorizeRequests().antMatchers("/user/**").hasRole("USER");
+        http.authorizeRequests().antMatchers("/admin/**").hasAuthority("ADMIN");
+        http.authorizeRequests().antMatchers("/user/**").hasAuthority("USER");
         // Tout les requetes necessite l'authentification
         http.authorizeRequests().anyRequest().authenticated();
 
@@ -55,12 +61,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Principal means username in Spring
         // Credentials means password
-        auth.jdbcAuthentication()
+
+
+      /*  auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery("select username as principal,password as credentials,active from users where username = ?")
                 .authoritiesByUsernameQuery("select username as principal, role as role from users_roles where username = ?")
                 .rolePrefix("ROLE_")
-                .passwordEncoder(passwordEncoder);
+                .passwordEncoder(passwordEncoder);*/
+
+
+        // User details Authentication
+        auth.userDetailsService(userDetailsService);
     }
 
     // Creates Bcrypt Password Encoder
