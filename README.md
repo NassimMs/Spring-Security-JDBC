@@ -1,23 +1,15 @@
-# Spring-Security-JDBC
-Continuation of the Spring MVC Project but with Spring Security Dependency
+# Spring MVC Thymeleaf
+Spring Boot CRUD Application Using Thymeleaf Template Engine
 
-![alt text](https://d3n0h9tb65y8q.cloudfront.net/public_assets/assets/000/001/706/original/Spring_Security.png?1637311021)
+# Thymeleaf
 
-# Functionnalities
-  - In Memory Authentication
-  - JDBC Authentifaction using mysql
-  - thymeleaf-extras-springsecurity5  
-  - Roles System and Access Management
-  - Added User Details Functionnality
+Thymeleaf is a modern server-side Java template engine for both web and standalone environments.
 
-## Docs 
+Thymeleaf's main goal is to bring elegant natural templates to your development workflow — HTML that can be correctly displayed in browsers and also work as static prototypes, allowing for stronger collaboration in development teams.
 
-Thymeleaf Extras Spring Security 5 (https://www.baeldung.com/spring-security-thymeleaf)
+![alt text](https://s1.o7planning.com/fr/11545/images/10858756.png)
 
-Password Storage : 
 
-https://docs.spring.io/spring-security/reference/features/authentication/password-storage.html
+## Further Reading and Documentation
 
-# Special Thanks 
-
-To @mohamedYoussfi   https://github.com/mohamedYoussfi  For his awesome instructions ✔✔
+[Thymeleaf 3.0 Documentation](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)

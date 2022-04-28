@@ -2,6 +2,7 @@ package ma.emsi.jpaap;
 
 import ma.emsi.jpaap.entities.Patient;
 import ma.emsi.jpaap.repositories.PatientRepository;
+import ma.emsi.jpaap.sec.service.SecurityService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,6 +38,22 @@ public class JpaApApplication {
                 System.out.println(p.getNom());
             });
 
+        };
+    }
+
+    @Bean
+    CommandLineRunner cusers(SecurityService securityService){
+        return args -> {
+            securityService.saveNewUser("nassim","1234","1234");
+            securityService.saveNewRole("USER","Utilisateur Normal");
+            securityService.addRoleToUser("nassim","USER");
+            securityService.saveNewUser("amine","12345","12345");
+            securityService.addRoleToUser("amine","USER");
+            // User Admin
+            securityService.saveNewUser("admin","1234","1234");
+            securityService.saveNewRole("ADMIN","Utilisateur Admin");
+            securityService.addRoleToUser("admin","ADMIN");
+            securityService.addRoleToUser("admin","USER");
         };
     }
 }
