@@ -1,15 +1,49 @@
-# Spring MVC Thymeleaf
-Spring Boot CRUD Application Using Thymeleaf Template Engine
+# Spring Security JDBC 
 
-# Thymeleaf
+![alt text](https://miro.medium.com/max/1400/1*3jPSO8IO9r0k0QTnvrTo_Q.jpeg)
 
-Thymeleaf is a modern server-side Java template engine for both web and standalone environments.
+Spring Security is a Java/Java EE framework that provides authentication, authorization and other security features for enterprise applications. The project was started in late 2003 as 'Acegi Security' by Ben Alex, with it being publicly released under the Apache License in March 2004
 
-Thymeleaf's main goal is to bring elegant natural templates to your development workflow — HTML that can be correctly displayed in browsers and also work as static prototypes, allowing for stronger collaboration in development teams.
+# Functionnalities 
 
-![alt text](https://s1.o7planning.com/fr/11545/images/10858756.png)
+  -Thymeleaf Extra Security Spring 5
+  - User Management and Access Controller
+  - JDBC Mysql Connection
+  - In Memory Auth 
 
 
-## Further Reading and Documentation
+## Rapport ----------------------------
 
-[Thymeleaf 3.0 Documentation](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
+Execution Captures
+
+# Create Users 
+
+![alt text](https://github.com/NassimMs/Spring-Security-JDBC/blob/master/captures/createUsers.PNG)
+
+# Users Database
+
+![alt text](https://github.com/NassimMs/Spring-Security-JDBC/blob/master/captures/usersDB.PNG)
+
+# Normal User Role 
+
+![alt text](https://github.com/NassimMs/Spring-Security-JDBC/blob/master/captures/user.PNG)
+
+# Admin User Role
+
+![alt text](https://github.com/NassimMs/Spring-Security-JDBC/blob/master/captures/ADMIN.PNG)
+
+# Edit User Admin Functionnality
+
+![alt text](https://github.com/NassimMs/Spring-Security-JDBC/blob/master/captures/editusers.PNG)
+
+# Delete User Admin Functionnality
+
+![alt text](https://github.com/NassimMs/Spring-Security-JDBC/blob/master/captures/delete.PNG)
+
+
+# Special Thanks 
+
+For @mohamedYoussfi for his awesome instructions https://github.com/mohamedYoussfi
+
+
+
